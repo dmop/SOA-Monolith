@@ -84,6 +84,25 @@ public class ClienteRestService {
 		return cli;
 	}
 
+	@GET
+	@Path("cliente/exists/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public boolean clienteExists(@PathParam("id") long id) {
+
+		Cliente cli = null;
+		boolean exists = false;
+		for (Cliente c : clientes.values()) {
+
+			if (c.getId() == id)
+				exists = true;
+
+		}
+
+		logger.info("o usuario é  " + exists);
+
+		return exists;
+	}
+
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void addCliente(Cliente cliente) {

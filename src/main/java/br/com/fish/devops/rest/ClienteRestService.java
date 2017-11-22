@@ -66,9 +66,9 @@ public class ClienteRestService {
 	}
 
 	@GET
-	@Path("cliente")
+	@Path("cliente/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Cliente getCliente(@QueryParam("id") long id) {
+	public Cliente getCliente(@PathParam("id") long id) {
 
 		Cliente cli = null;
 

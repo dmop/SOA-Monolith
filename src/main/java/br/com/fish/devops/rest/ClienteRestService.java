@@ -89,7 +89,6 @@ public class ClienteRestService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public boolean clienteExists(@PathParam("id") long id) {
 
-		Cliente cli = null;
 		boolean exists = false;
 		for (Cliente c : clientes.values()) {
 
@@ -98,7 +97,7 @@ public class ClienteRestService {
 
 		}
 
-		logger.info("o usuario é  " + exists);
+		logger.info("usuario com id: "+id+" é : " + exists);
 
 		return exists;
 	}

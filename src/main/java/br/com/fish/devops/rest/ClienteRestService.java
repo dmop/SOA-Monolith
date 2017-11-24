@@ -85,7 +85,7 @@ public class ClienteRestService {
 	}
 
 	@GET
-	@Path("cliente/exists/{id}")
+	@Path("cliente/{id}/exists")
 	@Produces(MediaType.APPLICATION_JSON)
 	public boolean clienteExists(@PathParam("id") long id) {
 

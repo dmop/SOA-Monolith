@@ -2,3 +2,5 @@
 /.idea/
 /output.log/
 /CLIENT_service.iml
+
+output\.log

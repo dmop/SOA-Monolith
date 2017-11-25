@@ -66,9 +66,9 @@ public class ClienteRestService {
 	}
 
 	@GET
-	@Path("cliente")
+	@Path("cliente/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Cliente getCliente(@QueryParam("id") long id) {
+	public Cliente getCliente(@PathParam("id") long id) {
 
 		Cliente cli = null;
 
@@ -82,6 +82,24 @@ public class ClienteRestService {
 		logger.info("foi buscado o cliente " + cli.getNome());
 
 		return cli;
+	}
+
+	@GET
+	@Path("cliente/{id}/exists")
+	@Produces(MediaType.APPLICATION_JSON)
+	public boolean clienteExists(@PathParam("id") long id) {
+
+		boolean exists = false;
+		for (Cliente c : clientes.values()) {
+
+			if (c.getId() == id)
+				exists = true;
+
+		}
+
+		logger.info("usuario com id: "+id+" é : " + exists);
+
+		return exists;
 	}
 
 	@POST

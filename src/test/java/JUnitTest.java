@@ -47,7 +47,7 @@ public class JUnitTest {
 		clientes.values().contains(cliente);
 	}
 	
-	@Test(expected = NullPointerException.class)
+	@Test
 	public void removeClientTest(){
 		clientes.remove(null);
 	}

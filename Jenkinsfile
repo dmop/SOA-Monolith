@@ -1,12 +1,6 @@
 node {
+    label 'emarosa-services'
     def app
-
-    agent {
-        node {
-            label 'emarosa-services'
-            customWorkspace '/home/imlbf/workspace/client'
-        }
-    }
 
     stage('Clone repository') {
         checkout scm

@@ -76,7 +76,7 @@
 					<buildArgs>
 						<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
 					</buildArgs>
-					<pullNewerImage>false</pullNewerImage>
+					<pullNewerImage>true</pullNewerImage>
 				</configuration>
 			</plugin>
         </plugins>

@@ -36,10 +36,26 @@ public class JUnitTest {
 	}
 	
 	@Test
-	public void getTest(){
+	public void getClientTest(){
 		clientes.put(cliente.getId(), cliente);
 		long clientID = cliente.getId();
-		assertEquals(cliente.getId(), clientID);
+		assertEquals("Era pra ser ",cliente.getId(), clientID);
 	}
 	
+	@Test
+	public void existsClientTest (){
+		clientes.values().contains(cliente);
+	}
+	
+	@Test(expected = NullPointerException.class)
+	public void removeClientTest(){
+		clientes.remove(null);
+	}
+	
+	@Test
+	public void qtdClientes(){
+		assertFalse(clientes.values().size()>0);
+		
+	}
+
 }
